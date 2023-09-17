@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { LoginModule } from './login/login.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { LoginModule } from './login/login.module';
     MatToolbarModule,
     MatListModule,
     MatButtonModule,
-    MatMenuModule
+    MatMenuModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     AuthGuard,

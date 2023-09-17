@@ -1,35 +1,55 @@
 :host {
-    display: flex;
-    justify-content: center;
-    margin: 100px 0px;
-  }
+  display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+}
 
-  .mat-form-field {
-    width: 100%;
-    min-width: 300px;
-  }
+.mat-form-field {
+  width: 100%;
+  min-width: 300px;
+}
 
-  mat-card-header,
-  mat-card-content {
-    display: flex;
-    justify-content: center;
-  }
+mat-card-header,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
 
-  .error {
-    padding: 16px;
-    width: 300px;
-    color: white;
-    background-color: red;
-  }
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
 
-  .button {
-    display: flex;
-    justify-content: flex-end;
-  }
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  mat-card-header {
-    padding: 20px;
-    background: #245eb1;
-    color: white;
-    margin-bottom: 20px;
-  }
+mat-card-header {
+  padding: 20px;
+  background: #673ab7;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Center the card vertically and horizontally */
+.login-card {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the form elements */
+.form-element {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  width: 100%;
+}

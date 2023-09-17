@@ -22,7 +22,10 @@ export class ProductFormComponent {
   ) { }
 
   ngOnInit(): void {
-
+    let currentUserData: any = JSON.parse(localStorage.getItem('currentUserData') || '{}');
+    if (currentUserData && currentUserData.role == 'user') {
+      this.router.navigate(['/'])
+    }
     this.productForm = this.formBuilder.group({
       title: ['', Validators.required],
       price: [0, Validators.required],
@@ -35,6 +38,13 @@ export class ProductFormComponent {
     if (this.productId) {
       this.getProductById()
     }
+  }
+
+  selectedFile: any = null;
+
+  onFileSelected(event: any): void {
+      this.selectedFile = event.target.files[0] ?? null;
+  
   }
 
   getProductById() {

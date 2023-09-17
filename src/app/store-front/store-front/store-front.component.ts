@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'store-front-root',
@@ -29,14 +30,20 @@ export class StoreFrontComponent implements OnInit {
   @Input('color') private color: string = 'accent';
   @Output() private ratingUpdated = new EventEmitter();
 
-  ngOnInit(): void {
-    this.getAllProductsCategories()
+
+
+
+
+  constructor(private productCategoriesService: ProductCategoriesService, public router: Router) {
+
   }
 
-
-
-  constructor(private productCategoriesService: ProductCategoriesService) {
-
+  ngOnInit(): void {
+    let currentUserData: any = JSON.parse(localStorage.getItem('currentUserData') || '{}');
+    if (currentUserData && currentUserData.role == 'admin') {
+      this.router.navigate(['/admin'])
+    }
+    this.getAllProductsCategories()
   }
 
   getAllProductsCategories() {

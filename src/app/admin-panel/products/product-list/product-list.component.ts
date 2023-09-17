@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { MatTableModule } from '@angular/material/table';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +16,7 @@ export class ProductListComponent {
   products!: Product[];
   displayedColumns: string[] = ['title', 'price', 'category', 'description', 'actions'];
   isLoadingResults: boolean = false
-  constructor(private productService: ProductService, private sanitizer: DomSanitizer, private toastr: ToastrService
+  constructor(private productService: ProductService, private sanitizer: DomSanitizer, private toastr: ToastrService, public router:Router
   ) { }
 
   sanitizeImageUrl(imageUrl: string) {
@@ -23,6 +24,10 @@ export class ProductListComponent {
   }
 
   ngOnInit(): void {
+    let currentUserData: any = JSON.parse(localStorage.getItem('currentUserData') || '{}');
+    if (currentUserData && currentUserData.role == 'user') {
+      this.router.navigate(['/'])
+    }
     this.getAllProducts()
   }
 
