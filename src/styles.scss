@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+p {
+  font-family: Lato;
+}
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.container {
+  padding: 30px;
+}
+
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-element {
+  padding: 5px 0px 25px 2px;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+}
+
+.spinner mat-spinner {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+mat-nav-list.list-horizontal {
+  padding: 0;
+  mat-list-item {
+    display: inline-block;
+    height: auto;
+    width: auto;
+  }
+}
+
+.mat-mdc-menu-item-text {
+  // color: white !important;
+
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  height: unset !important;
+}
+
+mat-list-item .mat-list-item-content {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}

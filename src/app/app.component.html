@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <span class="fill-remaining-space">{{'storeName' | translate}}</span>
+    <mat-nav-list class="list-horizontal">
+        <mat-list-item>
+            <button mat-menu-item [matMenuTriggerFor]="languages" style="color: white !important;">{{'languages' |
+                translate}}</button>
+        </mat-list-item>
+        <mat-menu #languages="matMenu" [overlapTrigger]="false">
+            <button (click)="switchLanguage('en')" mat-menu-item>
+                <span> {{'english' | translate}}</span>
+            </button>
+            <button (click)="switchLanguage('ar')" mat-menu-item>
+                <span> {{'arabic' | translate}}</span>
+            </button>
+        </mat-menu>
+
+        <mat-list-item *ngIf="authService.isAuthenticated()">
+            <button mat-menu-item style="color: white !important;" (click)="Logout()">{{'logout' | translate}}</button>
+        </mat-list-item>
+    </mat-nav-list>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

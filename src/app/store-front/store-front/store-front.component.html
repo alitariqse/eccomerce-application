@@ -1,0 +1,56 @@
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{'products' | translate}}</mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-card-content style="overflow: auto;">
+            <div class="spinner" *ngIf="isLoadingcategories">
+                <mat-spinner *ngIf="isLoadingcategories"></mat-spinner>
+            </div>
+            <mat-accordion>
+
+
+                <mat-expansion-panel *ngFor="let category of categories; let i = index;"
+                    (opened)="getProductsByCategory(category); panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{category}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+
+
+                    <mat-grid-list cols="4" >
+                        <div class="spinner" *ngIf="isLoadingProducts">
+                            <mat-spinner *ngIf="isLoadingProducts"></mat-spinner>
+                        </div>
+                        <mat-grid-tile *ngFor="let product of products; let j = index;">
+                            <mat-card class="card">
+                                <mat-card-header>
+                                    <mat-card-title>{{product?.title}}</mat-card-title>
+                                    <mat-card-subtitle>
+                                    </mat-card-subtitle>
+                                </mat-card-header>
+                                <img [style.margin]="'10px'" mat-card-lg-image src="{{product?.image}}">
+                                <mat-card-content>
+                                    <p class="description-box">
+                                     {{product?.description}}
+                                    </p>
+                                </mat-card-content>
+                            </mat-card>
+                        </mat-grid-tile>
+                    </mat-grid-list>
+
+
+
+                </mat-expansion-panel>
+            </mat-accordion>
+
+
+
+
+        </mat-card-content>
+
+    </mat-card>
+
+</div>
