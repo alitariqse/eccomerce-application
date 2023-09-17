@@ -20,7 +20,7 @@
                     </mat-expansion-panel-header>
 
 
-                    <mat-grid-list cols="4" >
+                    <mat-grid-list  [cols]="isMobile ? 1 : 4" >
                         <div class="spinner" *ngIf="isLoadingProducts">
                             <mat-spinner *ngIf="isLoadingProducts"></mat-spinner>
                         </div>
@@ -31,7 +31,7 @@
                                     <mat-card-subtitle>
                                     </mat-card-subtitle>
                                 </mat-card-header>
-                                <img [style.margin]="'10px'" mat-card-lg-image src="{{product?.image}}">
+                                <img [style.margin]="'10px'" [style.padding]="'10px'" mat-card-lg-image src="{{product?.image}}">
                                 <mat-card-content>
                                     <p class="description-box">
                                      {{product?.description}}

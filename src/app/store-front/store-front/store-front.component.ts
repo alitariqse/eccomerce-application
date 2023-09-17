@@ -9,6 +9,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { TranslateModule } from '@ngx-translate/core';
 import { Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'store-front-root',
@@ -29,14 +31,18 @@ export class StoreFrontComponent implements OnInit {
   @Input('starCount') private starCount: number = 5;
   @Input('color') private color: string = 'accent';
   @Output() private ratingUpdated = new EventEmitter();
+  isMobile: boolean = false;
 
 
 
 
 
-  constructor(private productCategoriesService: ProductCategoriesService, public router: Router) {
-
+  constructor(private productCategoriesService: ProductCategoriesService, public router: Router, private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe((result) => {
+      this.isMobile = result.matches;
+    });
   }
+
 
   ngOnInit(): void {
     let currentUserData: any = JSON.parse(localStorage.getItem('currentUserData') || '{}');
