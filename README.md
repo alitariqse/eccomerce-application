@@ -2,13 +2,13 @@
 
 A basic E-commerce store web app that will facilitate shopping experience.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+This project was generated with `Angular version 16.2.1`.
 
-Incorporating mobile-friendly designs across all screens. 
+Incorporating `mobile-friendly designs` across all screens. 
 While there was a time constraint preventing the refinement of the user interface, the foundation is in place for future enhancements. 
-Angular Material has been employed as the primary style framework, with styling defined using Saas for modularity and maintainability.
+`Angular Material` has been employed as the primary style framework, with styling defined using `Saas` for modularity and maintainability.
 
-Furthermore, The website offers multilingual support, catering to both English and Arabic-speaking users. The language can be easily switched, and the interface seamlessly adapts to reflect the selected language and text direction (LTR or RTL).
+Furthermore, The website offers `multilingual support`, catering to both `English and Arabic`-speaking users. The language can be `easily switched`, and the interface seamlessly adapts to reflect the selected language and text `direction (LTR or RTL)`.
 
 For data pertaining to categories and products, the application relies on the FakeStoreAPI. 
 To promote transparency and collaboration, the source code of the application is hosted on GitHub for accessibility and further development.
@@ -17,15 +17,15 @@ Simple, clear, readable code.
 
 ## Login Credentials 
 
-## Fot User:
+## For user:
 
-Username: user
-Password: user
+Username: `user`
+Password: `user`
 
-## For Admin:
+## For admin:
 
-Username: admin
-Password: admin
+Username: `admin`
+Password: `admin`
 
 ## Admin View: 
 
