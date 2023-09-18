@@ -24,3 +24,9 @@
     max-height: 110px;
     overflow: auto;
 }
+
+/* 
+mat-card-title {
+  max-height: 100px;
+  min-height: 100px;
+} */
