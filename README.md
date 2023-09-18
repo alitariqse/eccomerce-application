@@ -44,8 +44,8 @@ While the website has made significant strides, it remains a work in progress, w
 
 ## Install Packages
 
-In the project directory Run npm install
-Make sure you have installed Node JS (version 16.20.1) and Angular Cli (version 16.2.1) in your machine. 
+In the project directory Run `npm install`
+Make sure you have installed `Node JS (version 16.20.1)` and `Angular Cli (version 16.2.1)` in your machine. 
 
 ## Development server
 
